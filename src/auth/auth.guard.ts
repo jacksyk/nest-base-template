@@ -30,9 +30,7 @@ export class AuthGuard implements CanActivate {
     const req: Request = context.switchToHttp().getRequest();
     const token = req.headers.token;
     if (!token) {
-      throw new UnauthorizedException({
-        message: '没有权限操作',
-      });
+      throw new UnauthorizedException('没有权限操作');
     }
 
     try {

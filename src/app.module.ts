@@ -6,6 +6,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { User } from './user/entities/user.entity';
+import { WinstonModule } from './winston/winston.module';
+import { optionObject } from './winston/MyLogger';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -27,6 +29,7 @@ import { User } from './user/entities/user.entity';
     }),
     AuthModule,
     UserModule,
+    WinstonModule.forRoot(optionObject),
   ],
   controllers: [AppController],
   providers: [AppService],
