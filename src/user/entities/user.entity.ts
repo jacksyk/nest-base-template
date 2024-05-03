@@ -19,4 +19,9 @@ export class User {
     default: 0,
   })
   age: number;
+
+  @Column({
+    default: null,
+  })
+  email: string;
 }

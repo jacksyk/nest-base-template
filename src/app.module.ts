@@ -8,6 +8,7 @@ import { UserModule } from './user/user.module';
 import { User } from './user/entities/user.entity';
 import { WinstonModule } from './winston/winston.module';
 import { optionObject } from './winston/MyLogger';
+import { EmailModule } from 'src/email/email.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -30,6 +31,7 @@ import { optionObject } from './winston/MyLogger';
     AuthModule,
     UserModule,
     WinstonModule.forRoot(optionObject),
+    EmailModule,
   ],
   controllers: [AppController],
   providers: [AppService],
